@@ -77,7 +77,7 @@ const Hero = () => {
         </Link>
 
         <Link
-          href="/contact"
+          href="#contact"
           className=" w-[245px] flex items-center justify-center py-4 sm:py-[24px] sm:text-[18px] border-black  border-2 dark:border-white text-black dark:text-white rounded-[40px]"
         >
           Hire Me

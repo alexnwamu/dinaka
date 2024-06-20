@@ -9,7 +9,7 @@ const Navbar = () => {
       <h1>Dinaka. </h1>{" "}
       <div className="flex gap-3 items-center justify-center">
         <Link
-          href="#"
+          href="#contact"
           className="group flex items-center relative hover:text-[#2962EF] transition-transform gap-2"
         >
           Hire Me{" "}

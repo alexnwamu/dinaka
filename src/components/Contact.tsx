@@ -41,7 +41,7 @@ export default function ContactForm() {
       <h1 className=" text-center text-4xl md:text-6xl mb-4">
         Contact <span className="text-[#2962EF] ">Me</span>
       </h1>
-    <form onSubmit={handleSubmit(onSubmit)} className="w-full font-outfit bg-[#F8F8F8] dark:bg-[#23232369] shadow-md rounded-lg px-8 pt-6 max-w-4xl pb-8  mx-auto">
+    <form onSubmit={handleSubmit(onSubmit)} id="contact" className="w-full font-outfit bg-[#F8F8F8] dark:bg-[#23232369] shadow-md rounded-lg px-8 pt-6 max-w-4xl pb-8  mx-auto">
       <div className="mb-6">
         <label htmlFor="name" className="block text-sm lg:text-lg font-medium text-gray-700">
           Name
