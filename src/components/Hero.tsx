@@ -69,7 +69,7 @@ const Hero = () => {
       </span>
       <div className="flex sm:flex-row flex-col  mt-[40px] gap-[35px] ">
         <Link
-          href="https://drive.google.com/file/d/1GpIorBl2OcXsVCPH8NQ_x8RRTwrauthb/view"
+          href="https://drive.google.com/file/d/1lG8paOJ4xv89c-X2TFn0srs22ICLx7pl/view"
           target="_blank"
           className="bg-[#2962EF] flex items-center justify-center w-[245px] sm:py-[24px] py-4  sm:text-[18px] text-white dark:text-white rounded-[40px]"
         >
