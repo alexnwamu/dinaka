@@ -1,46 +1,62 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+// Allowed origins (localhost + your deployed site)
+const allowedOrigins = ["http://localhost:5173", "https://dinaka.vercel.app"];
+
+export async function OPTIONS() {
+  return NextResponse.json(
+    {},
+    {
+      status: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
+    },
+  );
+}
+
 export async function POST(req: NextRequest) {
   try {
-    // Enable CORS in the response headers
-    const headers = {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type",
-    };
+    // Get the request origin
+    const origin = req.headers.get("origin") || "";
 
-    // Handle CORS preflight
-    if (req.method === "OPTIONS") {
-      return new NextResponse(null, { status: 200, headers });
+    // Validate the allowed origins
+    if (!allowedOrigins.includes(origin)) {
+      return new NextResponse(
+        JSON.stringify({ error: "CORS policy does not allow this origin." }),
+        { status: 403 },
+      );
     }
 
-    // Destructure the form data from the request body
+    // Parse request body
     const { name, email, message } = await req.json();
 
-    // Create a transporter object using environment variables
+    // Create nodemailer transporter (Use .env variables)
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: "dinakanwamu@gmail.com", // Replace with your email
-        pass: "qtbkbbxdtxblbshi", // Replace with your email password
+        pass: "qtbkbbxdtxblbshi", // Repla
       },
     });
 
-    // Set up email data
+    // Set email options
     const mailOptions = {
       from: `"${name}" <${email}>`,
       to: "jimgeorgedivine@gmail.com",
       subject: "New Message from Portfolio",
       html: `
-        <h2>Contact Request</h2>
+        <h2>New Contact Message</h2>
         <p><b>Name:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Message:</b> ${message}</p>
       `,
     };
 
-    // Send the email
+    // Send email
     await transporter.sendMail(mailOptions);
 
     return new NextResponse(
@@ -49,14 +65,14 @@ export async function POST(req: NextRequest) {
         status: 200,
         headers: {
           "Content-Type": "application/json",
-          ...headers,
+          "Access-Control-Allow-Origin": origin,
         },
       },
     );
   } catch (error) {
     console.error("Error sending email:", error);
     return new NextResponse(
-      JSON.stringify({ message: "Failed to send email." }),
+      JSON.stringify({ error: "Failed to send email." }),
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
