@@ -2,7 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 // Allowed origins (localhost + your deployed site)
-const allowedOrigins = ["http://localhost:5173", "https://dinaka.vercel.app"];
+const allowedOrigins = [
+  "https://tonye-edits-portfolio.vercel.app",
+  "https://dinaka.vercel.app",
+];
 
 export async function OPTIONS() {
   return NextResponse.json(
