@@ -15,15 +15,7 @@ const AboutMe = () => {
       <div className="pt-[48px] w-auto sm:w-[400px] lg:w-auto max-w-[614px]">
         <h1 className="text-[24px] lg:text-[86px] font-bold text-center sm:text-left">ABOUT ME</h1>
         <p className="font-outfit text-[18px] sm:mt-[30px] text-center sm:text-left text-[#BDBDBD]">
-          Hey there! 👋 I'm Dinaka, a dedicated full-stack engineer with over 3
-          years of experience crafting exceptional web applications. I'm really
-          passionate about leveraging technology to solve real-world problems
-          and deliver seamless user experiences, My goal is to not only meet but
-          surpass the expectations placed upon me. I possess a strong passion
-          for continuous learning and thrive on effective collaboration with my
-          team members. By night, you'll find me cheering on Manchester
-          United—win or lose, my loyalty runs deep! Let's connect and chat about
-          tech, football, or anything in between!
+          Hey there! 👋 I'm Dinaka, a Full stack engineer who loves building applications across both frontend and backend. Beyond software development, I’m always exploring AI and its real world applications, finding ways to integrate intelligent systems into innovative products. I thrive on tackling complex challenges, learning new technologies, and staying ahead in the ever-evolving tech landscape
         </p>
       </div>
     </div>
