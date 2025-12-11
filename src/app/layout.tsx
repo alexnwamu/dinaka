@@ -1,55 +1,72 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "react-hot-toast";
+
 const inter = Inter({ subsets: ["latin"] });
 
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
 });
-import localFont from "next/font/local";
-import Head from "next/head";
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+});
+
 export const metadata: Metadata = {
-  title: "Dinaka Nwamu",
-  description: "Software Engineer Portfolio",
+  title: "Dinaka Nwamu | Software Engineer",
+  description:
+    "Software Engineer specializing in building exceptional digital experiences. Full Stack Developer passionate about creating intelligent, user-centric applications.",
+  keywords: [
+    "Software Engineer",
+    "Full Stack Developer",
+    "React",
+    "Next.js",
+    "TypeScript",
+  ],
+  authors: [{ name: "Dinaka Nwamu" }],
+  openGraph: {
+    title: "Dinaka Nwamu | Software Engineer",
+    description:
+      "Software Engineer specializing in building exceptional digital experiences.",
+    type: "website",
+  },
 };
 
-const myFont = localFont({
-  src: [
-    {
-      path: "./font/Unigeo64-Regular-trial.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./font/Unigeo64-Bold-trial.ttf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-});
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-            <Head>
- <link rel="icon" href="./icon.ico" />
-            </Head>
-      <body className={`${myFont.className} ${outfit.variable}`}>
-                
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/icon.ico" />
+      </head>
+      <body
+        className={`${outfit.variable} ${jetbrainsMono.variable} font-display`}
+      >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+          defaultTheme="dark"
+          enableSystem={true}
+          disableTransitionOnChange={false}
         >
-                    <Toaster/>
+          <Toaster
+            position="bottom-right"
+            toastOptions={{
+              className: "",
+              style: {
+                background: "hsl(var(--card))",
+                color: "hsl(var(--foreground))",
+                border: "1px solid hsl(var(--border))",
+              },
+            }}
+          />
           {children}
         </ThemeProvider>
       </body>

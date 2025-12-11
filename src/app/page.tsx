@@ -1,20 +1,24 @@
-import AboutMe from "@/components/AboutMe";
 import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import Projects from "@/components/Projects";
-import RecentProjects from "@/components/RecentProjects";
-import Skills from "@/components/Skills";
-import Image from "next/image";
+import FeaturedProjects from "@/components/FeaturedProjects";
+import Experience from "@/components/Experience";
+import SkillsSection from "@/components/SkillsSection";
+import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
+import CursorGlow from "@/components/CursorGlow";
+
 export default function Home() {
   return (
-    <main>
+    <main className="relative min-h-screen bg-background noise-bg">
+      <CursorGlow />
       <Navbar />
       <Hero />
-      <AboutMe />
-      <Skills />
-            <RecentProjects/>
-            <Contact/>
+      <Experience />
+      <SkillsSection />
+      <Contact />
+      <Footer />
+      <ScrollToTop />
     </main>
   );
 }

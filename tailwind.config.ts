@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 const svgToDataUri = require("mini-svg-data-uri");
@@ -79,6 +78,13 @@ const config = {
       },
       fontFamily: {
         outfit: ["var(--font-outfit)"],
+        mono: [
+          "var(--font-jetbrains)",
+          "JetBrains Mono",
+          "Fira Code",
+          "monospace",
+        ],
+        display: ["var(--font-outfit)", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
