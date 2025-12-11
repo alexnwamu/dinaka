@@ -117,7 +117,7 @@ export default function Contact() {
                   <div className="flex items-start gap-3">
                     <MapPin className="w-4 h-4 text-primary mt-1" />
                     <div>
-                      <p className="text-muted-foreground">// Timezone</p>
+                      <p className="text-muted-foreground">{"//"} Timezone</p>
                       <p className="text-foreground">UTC +1</p>
                     </div>
                   </div>
@@ -125,7 +125,7 @@ export default function Contact() {
                   <div className="flex items-start gap-3">
                     <Mail className="w-4 h-4 text-primary mt-1" />
                     <div>
-                      <p className="text-muted-foreground">// email</p>
+                      <p className="text-muted-foreground">{"//"} email</p>
                       <Link
                         href={socialLinks.email}
                         className="text-foreground hover:text-primary transition-colors"
