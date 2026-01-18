@@ -141,5 +141,6 @@ export const socialLinks = {
   twitter: "https://twitter.com/realdinaka",
   email: "mailto:nwamudinaka@gmail.com",
   resume:
-    "https://drive.google.com/file/d/1K4MdAK6U2XEGY6uCiXVhj3bZHEXsgtJ1/view",
+
+    "https://drive.google.com/file/d/1bZqvXE-OgPCFCIueHp4U-dcgsVPXb-GS/view",
 };
